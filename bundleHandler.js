@@ -5,6 +5,8 @@ const path = require("path");
 dotenv.config();
 
 async function fetchProducts(pageInfo = null, accumulated = {}) {
+
+  
   const url = new URL(
     `https://${process.env.SHOP}.myshopify.com/admin/api/2023-07/products.json`
   );
@@ -63,7 +65,7 @@ fetchProducts()
         `{% assign product_handles = product_handles | append: '${sku}:${handle}' | append: ',' %}\n` +
         `{% assign product_variant_ids = product_variant_ids | append: '${sku}:${variantId}' | append: ',' %}\n` +
         `{% assign product_titles = product_titles | append: '${sku}:${title}' | append: ',' %}\n` +
-        `{% assign product_inventory = product_inventory | append: '${sku}:${inventory_quantity}' | append: ',' %}`
+        `{% assign product_quantity = product_quantity | append: '${sku}:${inventory_quantity}' | append: ',' %}`
     );
 
     const filePath = path.join(__dirname, "products_output.txt");
