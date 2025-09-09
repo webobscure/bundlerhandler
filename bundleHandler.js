@@ -64,7 +64,7 @@ fetchProducts()
         `{% assign product_images = product_images | append: '${sku}:${image}' | append: ',' %}\n` +
         `{% assign product_handles = product_handles | append: '${sku}:${handle}' | append: ',' %}\n` +
         `{% assign product_variant_ids = product_variant_ids | append: '${sku}:${variantId}' | append: ',' %}\n` +
-        `{% assign product_titles = product_titles | append: '${sku}:${title}' | append: ',' %}\n` +
+        `{% assign product_titles = product_titles | append: '${sku}' | append: ',' %}\n` +
         `{% assign product_quantity = product_quantity | append: '${sku}:${inventory_quantity}' | append: ',' %}`
     );
 
